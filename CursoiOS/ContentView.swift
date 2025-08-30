@@ -9,11 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        // Horizontal
+//        HStack {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            // Vertical
+//            VStack {
+//                Text("Pepe2")
+//                Text("Pepe3")
+//                    .bold()
+//                    .frame(width: 100, height: 200)
+//            }
+            
+            Rectangle()
+                .foregroundColor(.red)
+                .frame(height: 40)
+            Rectangle()
+                .foregroundColor(.red)
+                .frame(height: 40)
+                .padding(.bottom, 60)
+            Rectangle()
+                .foregroundColor(.red)
+                .frame(height: 100)
         }
         .padding()
     }
