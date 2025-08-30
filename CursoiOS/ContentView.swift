@@ -9,29 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        // Horizontal
-//        HStack {
         VStack {
-            // Vertical
-//            VStack {
-//                Text("Pepe2")
-//                Text("Pepe3")
-//                    .bold()
-//                    .frame(width: 100, height: 200)
-//            }
+            HStack {
+                Rectangle()
+                    .foregroundColor(.blue)
+                Rectangle()
+                    .foregroundColor(.orange)
+                Rectangle()
+                    .foregroundColor(.yellow)
+            }
             
             Rectangle()
-                .foregroundColor(.red)
-                .frame(height: 40)
+                .foregroundColor(.orange)
+            
+            HStack {
+                Circle()
+                    .foregroundColor(.green)
+                Rectangle()
+                    .frame(height: 300)
+                Circle()
+                    .foregroundColor(.indigo)
+            }
+            
             Rectangle()
-                .foregroundColor(.red)
-                .frame(height: 40)
-                .padding(.bottom, 60)
-            Rectangle()
-                .foregroundColor(.red)
-                .frame(height: 100)
+                .foregroundColor(.orange)
+            
+            HStack {
+                Rectangle()
+                    .foregroundColor(.blue)
+                Rectangle()
+                    .foregroundColor(.orange)
+                Rectangle()
+                    .foregroundColor(.yellow)
+            }
         }
-        .padding()
+        .background(.red)
+        .padding(.vertical)
     }
 }
 
