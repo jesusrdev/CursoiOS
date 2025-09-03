@@ -29,8 +29,27 @@ struct ButtonExample: View {
     }
 }
 
+struct Counter: View {
+    @State var suscribersNumber = 0
+    
+    var body: some View {
+        Button {
+            suscribersNumber += 1
+        } label: {
+            Text("Suscriptores: \(suscribersNumber)")
+                .bold()
+                .font(.title)
+                .padding(.horizontal,16)
+                .frame(height: 70)
+                .background(.red)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+        }
+    }
+}
+
 struct ButtonExample_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonExample()
+        Counter()
     }
 }
