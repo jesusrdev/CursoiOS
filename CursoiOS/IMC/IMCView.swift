@@ -16,6 +16,8 @@ struct IMCView: View {
     
     @State var gender: Int = 0
     @State var height: Double = 150
+    @State var age: Int = 18
+    @State var weight: Int = 70
     
     var body: some View {
         VStack {
@@ -24,6 +26,10 @@ struct IMCView: View {
                 ToggleButton(text: "Hombre", imageName: "star.fill", gender: 1, selectedGender: $gender)
             }
             HeightCalculator(selectedHeight: $height)
+            HStack {
+                CounterButton(title: "Edad", value: $age)
+                CounterButton(title: "Peso", value: $weight)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundApp"))
@@ -91,6 +97,59 @@ struct HeightCalculator: View {
             Slider(value: $selectedHeight, in: 100...220, step: 1)
                 .accentColor(.purple)
                 .padding(.horizontal, 16)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("BackgroundComponent"))
+    }
+}
+
+struct CounterButton: View {
+    let title: String
+    
+    @Binding var value: Int
+    
+    var body: some View {
+        VStack {
+            TitleText(text: title)
+            InformationText(text: "\(value)")
+            
+            HStack {
+                Button(action: {
+                    if(value > 0) {
+                        value -= 1
+                    }
+                }) {
+                    ZStack {
+                        Circle()
+                            .frame(width: 70, height: 70)
+                            .foregroundColor(.purple)
+                        Image(systemName: "minus")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                            .frame(width: 25, height: 25)
+                    }
+                }
+                .disabled(value <= 0)
+                
+                Button(action: {
+                    if(value < 100) {
+                        value += 1
+                    }
+                }) {
+                    ZStack {
+                        Circle()
+                            .frame(width: 70, height: 70)
+                            .foregroundColor(.purple)
+                        Image(systemName: "plus")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.white)
+                            .frame(width: 25, height: 25)
+                    }
+                }
+                .disabled(value >= 100)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundComponent"))
