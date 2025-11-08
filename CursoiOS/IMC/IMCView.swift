@@ -14,9 +14,14 @@ struct IMCView: View {
 //            .titleTextAttributes = [.foregroundColor:UIColor.white]
 //    }
     
+    @State var gender: Int = 0
+    
     var body: some View {
         VStack {
-            Text("pepe")
+            HStack{
+                ToggleButton(text: "Hombre", imageName: "heart.fill", gender: 0, selectedGender: $gender)
+                ToggleButton(text: "Hombre", imageName: "star.fill", gender: 1, selectedGender: $gender)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundApp"))
@@ -27,6 +32,42 @@ struct IMCView: View {
             }
 //            .navigationBarBackButtonHidden()
 //            .navigationTitle("IMC Calculator")
+    }
+}
+
+struct ToggleButton: View {
+    let text: String
+    let imageName: String
+    let gender: Int
+    
+    @Binding var selectedGender: Int
+    
+    
+    var body: some View {
+        let color = gender == selectedGender ? Color("BackgroundComponentSelected") : Color("BackgroundComponent")
+        
+        Button(action: {
+            selectedGender = gender
+        }) {
+            VStack {
+                Image(systemName: imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 100)
+                    .foregroundColor(.white)
+                InformationText(text: text)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(color)
+        }
+    }
+}
+
+struct InformationText: View {
+    let text: String
+    
+    var body: some View {
+        Text(text).font(.largeTitle).bold().foregroundColor(.white)
     }
 }
 
