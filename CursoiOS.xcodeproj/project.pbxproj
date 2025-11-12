@@ -20,6 +20,7 @@
 		52D328FE2E68FE3500F85B13 /* TextFieldExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D328FD2E68FE3500F85B13 /* TextFieldExample.swift */; };
 		52F5A3882E669A31000D2C46 /* ImageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A3872E669A31000D2C46 /* ImageExample.swift */; };
 		EA14725B2EC42F1000074635 /* IMCResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14725A2EC42F1000074635 /* IMCResult.swift */; };
+		EA3FCEAC2EC5359200D2646B /* ApiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FCEAB2EC5359200D2646B /* ApiNetwork.swift */; };
 		EA4152B12EC525D400162AFD /* ListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4152B02EC525D400162AFD /* ListExample.swift */; };
 		EA4152B42EC52BE200162AFD /* SuperheroSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4152B32EC52BE200162AFD /* SuperheroSearcher.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,7 @@
 		52D328FD2E68FE3500F85B13 /* TextFieldExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExample.swift; sourceTree = "<group>"; };
 		52F5A3872E669A31000D2C46 /* ImageExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExample.swift; sourceTree = "<group>"; };
 		EA14725A2EC42F1000074635 /* IMCResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCResult.swift; sourceTree = "<group>"; };
+		EA3FCEAB2EC5359200D2646B /* ApiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNetwork.swift; sourceTree = "<group>"; };
 		EA4152B02EC525D400162AFD /* ListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExample.swift; sourceTree = "<group>"; };
 		EA4152B32EC52BE200162AFD /* SuperheroSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroSearcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				EA4152B32EC52BE200162AFD /* SuperheroSearcher.swift */,
+				EA3FCEAB2EC5359200D2646B /* ApiNetwork.swift */,
 			);
 			path = Superhero;
 			sourceTree = "<group>";
@@ -160,7 +163,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					5202EAAA2E610EA70051D955 = {
 						CreatedOnToolsVersion = 14.2;
@@ -215,6 +218,7 @@
 				52D328FE2E68FE3500F85B13 /* TextFieldExample.swift in Sources */,
 				5235229C2E7AF30D00767414 /* IMCView.swift in Sources */,
 				5202EAAF2E610EA70051D955 /* CursoiOSApp.swift in Sources */,
+				EA3FCEAC2EC5359200D2646B /* ApiNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +261,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -317,6 +322,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

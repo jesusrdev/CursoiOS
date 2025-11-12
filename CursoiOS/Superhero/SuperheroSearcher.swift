@@ -22,6 +22,15 @@ struct SuperheroSearcher: View {
                 .autocorrectionDisabled()
                 .onSubmit {
                     print(superheroName)
+                    
+                    Task{
+                        do{
+                            let response = try await ApiNetwork().getHeroesByQuery(query: superheroName)
+                            print(response)
+                        }catch{
+                            print("Error")
+                        }
+                    }
                 }
             Spacer()
         }
