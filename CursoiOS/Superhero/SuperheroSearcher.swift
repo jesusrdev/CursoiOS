@@ -45,7 +45,7 @@ struct SuperheroSearcher: View {
                 List(wrapper?.results ?? []) { superhero in
                     ZStack {
                         SuperheroItem(superhero: superhero)
-                        NavigationLink(destination: {}) {
+                        NavigationLink(destination: {SuperheroDetail(id: superhero.id)}) {
                             EmptyView()
                         }.opacity(0)
                     }.listRowBackground(Color("BackgroundApp"))
