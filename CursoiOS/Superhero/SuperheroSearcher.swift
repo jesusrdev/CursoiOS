@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct SuperheroSearcher: View {
     @State var superheroName: String = ""
     @State var wrapper: ApiNetwork.Wrapper? = nil
+    @State var loading: Bool = false
     
     var body: some View {
         VStack {
@@ -22,6 +24,7 @@ struct SuperheroSearcher: View {
                 .padding(8)
                 .autocorrectionDisabled()
                 .onSubmit {
+                    loading = true
                     print(superheroName)
                     
                     Task{
@@ -30,13 +33,25 @@ struct SuperheroSearcher: View {
                         }catch{
                             print("Error")
                         }
+                        loading = false
                     }
                 }
             
-            List(wrapper?.results ?? []) { superhero in
-                SuperheroItem(superhero: superhero)
+            if loading {
+                ProgressView().tint(.white)
             }
-            .listStyle(.plain)
+            
+            NavigationStack {
+                List(wrapper?.results ?? []) { superhero in
+                    ZStack {
+                        SuperheroItem(superhero: superhero)
+                        NavigationLink(destination: {}) {
+                            EmptyView()
+                        }.opacity(0)
+                    }.listRowBackground(Color("BackgroundApp"))
+                }
+                .listStyle(.plain)
+            }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -49,7 +64,12 @@ struct SuperheroItem: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
+            WebImage(url: URL(string: superhero.image.url))
+                .resizable()
+                .indicator(.activity)
+                .scaledToFill()
+                .frame(height: 200)
+            
             VStack {
                 Spacer()
                 Text(superhero.name)
@@ -63,12 +83,11 @@ struct SuperheroItem: View {
         }
         .frame(height: 200)
         .cornerRadius(32)
-        .listRowBackground(Color("BackgroundApp"))
     }
 }
 
 #Preview {
-    SuperheroItem(superhero: ApiNetwork.Superhero(id: "", name: "Superman"))
+    SuperheroItem(superhero: ApiNetwork.Superhero(id: "", name: "Superman", image: ApiNetwork.Image(url: "")))
 }
 
 #Preview {
