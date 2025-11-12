@@ -23,13 +23,15 @@ struct IMCView: View {
         VStack {
             HStack{
                 ToggleButton(text: "Hombre", imageName: "heart.fill", gender: 0, selectedGender: $gender)
-                ToggleButton(text: "Hombre", imageName: "star.fill", gender: 1, selectedGender: $gender)
+                ToggleButton(text: "Mujer", imageName: "star.fill", gender: 1, selectedGender: $gender)
             }
             HeightCalculator(selectedHeight: $height)
             HStack {
                 CounterButton(title: "Edad", value: $age)
                 CounterButton(title: "Peso", value: $weight)
             }
+            
+            IMCCalculateButton(userWeight: Double(weight), userHeight: height)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundApp"))
@@ -153,6 +155,24 @@ struct CounterButton: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundComponent"))
+    }
+}
+
+struct IMCCalculateButton: View {
+    let userWeight: Double
+    let userHeight: Double
+    
+    var body: some View {
+        NavigationStack {
+            NavigationLink(destination: {IMCResult(userWeight: userWeight, userHeight: userHeight)}) {
+                Text("Calcular")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.purple)
+                    .frame(maxWidth: .infinity, maxHeight: 100)
+                    .background(Color("BackgroundComponent"))
+            }
+        }
     }
 }
 
