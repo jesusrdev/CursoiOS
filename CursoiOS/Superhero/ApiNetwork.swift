@@ -16,7 +16,7 @@ class ApiNetwork {
         let results: [Superhero]
     }
     
-    struct Superhero: Codable {
+    struct Superhero: Codable, Identifiable {
         let id: String
         let name: String
     }

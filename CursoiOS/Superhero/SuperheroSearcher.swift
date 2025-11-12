@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SuperheroSearcher: View {
     @State var superheroName: String = ""
+    @State var wrapper: ApiNetwork.Wrapper? = nil
     
     var body: some View {
         VStack {
@@ -25,18 +26,49 @@ struct SuperheroSearcher: View {
                     
                     Task{
                         do{
-                            let response = try await ApiNetwork().getHeroesByQuery(query: superheroName)
-                            print(response)
+                            wrapper = try await ApiNetwork().getHeroesByQuery(query: superheroName)
                         }catch{
                             print("Error")
                         }
                     }
                 }
+            
+            List(wrapper?.results ?? []) { superhero in
+                SuperheroItem(superhero: superhero)
+            }
+            .listStyle(.plain)
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundApp"))
     }
+}
+
+struct SuperheroItem: View {
+    let superhero: ApiNetwork.Superhero
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+            VStack {
+                Spacer()
+                Text(superhero.name)
+                    .foregroundColor(.white)
+                    .font(.title)
+                    .bold()
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(.white.opacity(0.5))
+            }
+        }
+        .frame(height: 200)
+        .cornerRadius(32)
+        .listRowBackground(Color("BackgroundApp"))
+    }
+}
+
+#Preview {
+    SuperheroItem(superhero: ApiNetwork.Superhero(id: "", name: "Superman"))
 }
 
 #Preview {
