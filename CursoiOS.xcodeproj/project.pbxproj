@@ -20,6 +20,7 @@
 		52D328FE2E68FE3500F85B13 /* TextFieldExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D328FD2E68FE3500F85B13 /* TextFieldExample.swift */; };
 		52F5A3882E669A31000D2C46 /* ImageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F5A3872E669A31000D2C46 /* ImageExample.swift */; };
 		EA14725B2EC42F1000074635 /* IMCResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA14725A2EC42F1000074635 /* IMCResult.swift */; };
+		EA4152B12EC525D400162AFD /* ListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4152B02EC525D400162AFD /* ListExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		52D328FD2E68FE3500F85B13 /* TextFieldExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExample.swift; sourceTree = "<group>"; };
 		52F5A3872E669A31000D2C46 /* ImageExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExample.swift; sourceTree = "<group>"; };
 		EA14725A2EC42F1000074635 /* IMCResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCResult.swift; sourceTree = "<group>"; };
+		EA4152B02EC525D400162AFD /* ListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				52D328F92E68F8B400F85B13 /* LabelExample.swift */,
 				52D328FB2E68FAE400F85B13 /* ButtonExample.swift */,
 				52D328FD2E68FE3500F85B13 /* TextFieldExample.swift */,
+				EA4152B02EC525D400162AFD /* ListExample.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				52D328FC2E68FAE400F85B13 /* ButtonExample.swift in Sources */,
 				52D328FA2E68F8B400F85B13 /* LabelExample.swift in Sources */,
 				5232F2982E62804200546D75 /* TextExample.swift in Sources */,
+				EA4152B12EC525D400162AFD /* ListExample.swift in Sources */,
 				EA14725B2EC42F1000074635 /* IMCResult.swift in Sources */,
 				523522992E7AEFCB00767414 /* MenuView.swift in Sources */,
 				5232F2952E627FDA00546D75 /* MainView.swift in Sources */,
