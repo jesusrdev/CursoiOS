@@ -25,6 +25,9 @@
 		EA3FCEB12EC5489600D2646B /* SuperheroDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FCEB02EC5489600D2646B /* SuperheroDetail.swift */; };
 		EA4152B12EC525D400162AFD /* ListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4152B02EC525D400162AFD /* ListExample.swift */; };
 		EA4152B42EC52BE200162AFD /* SuperheroSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4152B32EC52BE200162AFD /* SuperheroSearcher.swift */; };
+		EA71733F2EC776B300258F98 /* FavPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA71733E2EC776B300258F98 /* FavPlace.swift */; };
+		EA7173422EC778A600258F98 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7173412EC778A600258F98 /* Place.swift */; };
+		EA7173442EC77A0000258F98 /* CustomDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7173432EC77A0000258F98 /* CustomDialog.swift */; };
 		EAB2026B2EC6C0A400479472 /* MapExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB2026A2EC6C0A400479472 /* MapExample.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		EA3FCEB02EC5489600D2646B /* SuperheroDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroDetail.swift; sourceTree = "<group>"; };
 		EA4152B02EC525D400162AFD /* ListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExample.swift; sourceTree = "<group>"; };
 		EA4152B32EC52BE200162AFD /* SuperheroSearcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperheroSearcher.swift; sourceTree = "<group>"; };
+		EA71733E2EC776B300258F98 /* FavPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPlace.swift; sourceTree = "<group>"; };
+		EA7173412EC778A600258F98 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		EA7173432EC77A0000258F98 /* CustomDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDialog.swift; sourceTree = "<group>"; };
 		EAB2026A2EC6C0A400479472 /* MapExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +87,7 @@
 		5202EAAD2E610EA70051D955 /* CursoiOS */ = {
 			isa = PBXGroup;
 			children = (
+				EA71733D2EC7769200258F98 /* FavPlace */,
 				EA4152B22EC52BCA00162AFD /* Superhero */,
 				5235229A2E7AF2F700767414 /* IMC */,
 				5232F2962E627FF800546D75 /* Components */,
@@ -120,6 +127,7 @@
 				52D328FD2E68FE3500F85B13 /* TextFieldExample.swift */,
 				EA4152B02EC525D400162AFD /* ListExample.swift */,
 				EAB2026A2EC6C0A400479472 /* MapExample.swift */,
+				EA7173432EC77A0000258F98 /* CustomDialog.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -141,6 +149,23 @@
 				EA3FCEB02EC5489600D2646B /* SuperheroDetail.swift */,
 			);
 			path = Superhero;
+			sourceTree = "<group>";
+		};
+		EA71733D2EC7769200258F98 /* FavPlace */ = {
+			isa = PBXGroup;
+			children = (
+				EA7173402EC7788D00258F98 /* model */,
+				EA71733E2EC776B300258F98 /* FavPlace.swift */,
+			);
+			path = FavPlace;
+			sourceTree = "<group>";
+		};
+		EA7173402EC7788D00258F98 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EA7173412EC778A600258F98 /* Place.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5202EAB12E610EA70051D955 /* Exercise1.swift in Sources */,
+				EA71733F2EC776B300258F98 /* FavPlace.swift in Sources */,
 				52D328FC2E68FAE400F85B13 /* ButtonExample.swift in Sources */,
 				52D328FA2E68F8B400F85B13 /* LabelExample.swift in Sources */,
 				5232F2982E62804200546D75 /* TextExample.swift in Sources */,
@@ -230,8 +256,10 @@
 				52D328FE2E68FE3500F85B13 /* TextFieldExample.swift in Sources */,
 				EA3FCEB12EC5489600D2646B /* SuperheroDetail.swift in Sources */,
 				5235229C2E7AF30D00767414 /* IMCView.swift in Sources */,
+				EA7173422EC778A600258F98 /* Place.swift in Sources */,
 				5202EAAF2E610EA70051D955 /* CursoiOSApp.swift in Sources */,
 				EA3FCEAC2EC5359200D2646B /* ApiNetwork.swift in Sources */,
+				EA7173442EC77A0000258F98 /* CustomDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

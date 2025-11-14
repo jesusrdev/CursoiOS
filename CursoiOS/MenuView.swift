@@ -17,6 +17,13 @@ struct MenuView: View {
                 NavigationLink(destination: SuperheroSearcher()) {
                     Text("Superhero Searcher")
                 }
+                if #available(iOS 17.0, *) {
+                    NavigationLink(destination: FavPlace()) {
+                        Text("Fav Place")
+                    }
+                } else {
+                    // Fallback on earlier versions
+                }
             }
         }
     }
