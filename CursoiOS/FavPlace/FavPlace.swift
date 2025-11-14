@@ -24,8 +24,12 @@ struct FavPlace: View {
     @State var name: String = ""
     @State var fav: Bool = false
     
+    @State var showSheet: Bool = false
+    let height = stride(from: 0.3, through: 0.3, by: 0.1).map{
+        PresentationDetent.fraction($0)
+    }
+    
     var body: some View {
-        
         ZStack{
             MapReader{ proxy in
                 Map(position: $position){
@@ -44,6 +48,20 @@ struct FavPlace: View {
                 .onTapGesture { coord in
                     if let coordinates = proxy.convert(coord, from: .local) {
                         showPopup = coordinates
+                    }
+                }
+                .overlay {
+                    VStack{
+                        Button("Show list") {
+                            showSheet = true
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(.white)
+                        .cornerRadius(16)
+                        .padding(16)
+                        
+                        Spacer()
                     }
                 }
             }
@@ -66,6 +84,36 @@ struct FavPlace: View {
                     }, onDismissOutside: true, content: view)
                 }
             }
+        }.sheet(isPresented: $showSheet) {
+            ScrollView(.horizontal){
+                LazyHStack{
+                    ForEach(places){ place in
+                        let color = place.fav ? Color.yellow : Color.black
+                        
+                        VStack{
+                            Text(place.name).font(.title3).bold()
+                        }.frame(width: 150, height: 100).overlay {
+                            RoundedRectangle(cornerRadius: 20).stroke(color.opacity(0.5), lineWidth: 1)
+                        }.shadow(radius: 5).padding(.horizontal, 8)
+                            .onTapGesture {
+                                animateCamera(coordinates: place.coordinates)
+                                showSheet = false
+                            }
+                    }
+                }
+            }
+            .presentationDetents(Set(height))
+        }
+    }
+    
+    func animateCamera(coordinates: CLLocationCoordinate2D){
+        withAnimation{
+            position = MapCameraPosition.region(
+                MKCoordinateRegion(
+                    center: coordinates,
+                    span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                )
+            )
         }
     }
     
